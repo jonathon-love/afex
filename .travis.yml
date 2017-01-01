@@ -4,11 +4,6 @@ language: r
 warnings_are_errors: true
 sudo: required
 
-before_install:
-  - sudo add-apt-repository ppa:marutter/c2d4u -y
-  - sudo apt-get update -q
-  - sudo apt-get install r-cran-stringr r-cran-coin r-cran-matrix r-cran-pbkrtest r-cran-car r-cran-ascii r-cran-xtable r-cran-parallel r-cran-plyr r-cran-optimx r-cran-nloptr r-cran-knitr r-cran-lattice r-cran-multcomp r-cran-mlmrev r-cran-dplyr -y
-
 r_binary_packages:
  - testthat
  - lme4
@@ -24,3 +19,8 @@ r_binary_packages:
  - coin
  - ascii
  - dplyr
+ - optimx
+ - nloptr
+ - lattice
+ - multcomp
+ - cran-mlmrev
