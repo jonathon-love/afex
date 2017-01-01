@@ -23,4 +23,3 @@ r_binary_packages:
  - nloptr
  - lattice
  - multcomp
- - cran-mlmrev
