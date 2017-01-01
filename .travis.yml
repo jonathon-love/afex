@@ -4,15 +4,27 @@ language: r
 warnings_are_errors: true
 sudo: required
 
+before_install:
+ - export R_LIBS=/usr/lib/R/site-library
+
 r_binary_packages:
+
+ # depends
+
  - lme4
  - reshape2
  - lsmeans
+
+ # imports
+
  - stringr
  - coin
  - Matrix
  - pbkrtest
  - car
+
+ # suggests
+
  - ascii
  - xtable
  - plyr
@@ -23,6 +35,10 @@ r_binary_packages:
  - multcomp
  - testthat
  - dplyr
+
+ # suggests of dependencies
+ # travis wants to install these
+ # at least specifying them here means he doesn't waste time building them
 
  - backports
  - base64enc
