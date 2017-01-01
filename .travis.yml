@@ -53,7 +53,6 @@ r_binary_packages:
  - RcppEigen
  - reshape2
  - rmarkdown
- - rprojroot
  - SparseM
  - stringi
  - stringr
