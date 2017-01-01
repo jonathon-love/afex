@@ -7,14 +7,13 @@ r_binary_packages:
  - lme4
  - reshape2
  - lsmeans
- - stringr,
+ - stringr
  - coin
  - Matrix
  - pbkrtest
  - car
  - ascii
  - xtable
- - parallel
  - plyr
  - optimx
  - nloptr
@@ -23,3 +22,41 @@ r_binary_packages:
  - multcomp
  - testthat
  - dplyr
+
+ - backports
+ - base64enc
+ - BH
+ - car
+ - coda
+ - coin
+ - crayon
+ - DBI
+ - dfoptim
+ - digest
+ - dplyr
+ - estimability
+ - evaluate
+ - highr
+ - jsonlite
+ - knitr
+ - lazyeval
+ - lsmeans
+ - mime
+ - multcomp
+ - numDeriv
+ - optextras
+ - plyr
+ - quantreg
+ - R6
+ - Rcpp
+ - RcppEigen
+ - reshape2
+ - rmarkdown
+ - rprojroot
+ - SparseM
+ - stringi
+ - stringr
+ - tibble
+ - ucminf
+ - yaml
+ - zoo
