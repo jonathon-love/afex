@@ -5,21 +5,22 @@ warnings_are_errors: true
 sudo: required
 
 r_binary_packages:
- - testthat
  - lme4
+ - reshape2
  - lsmeans
+ - stringr,
+ - coin
+ - Matrix
  - pbkrtest
  - car
- - knitr
- - rmarkdown
- - multcomp
- - reshape2
- - nloptr
- - optimx
- - coin
  - ascii
- - dplyr
+ - xtable
+ - parallel
+ - plyr
  - optimx
  - nloptr
+ - knitr
  - lattice
  - multcomp
+ - testthat
+ - dplyr
