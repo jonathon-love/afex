@@ -5,7 +5,7 @@ warnings_are_errors: true
 sudo: required
 
 before_install:
- - export R_LIBS=/usr/lib/R/site-library
+ - export R_LIBS=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/usr/lib/R/library
 
 r_binary_packages:
 
