@@ -3,6 +3,12 @@
 language: r
 warnings_are_errors: true
 sudo: required
+
+before_install:
+  - sudo add-apt-repository ppa:marutter/cran2deb4ubuntu -y
+  - sudo apt-get update -q
+  - sudo apt-get install backports -y
+
 r_binary_packages:
  - testthat
  - lme4
@@ -18,4 +24,3 @@ r_binary_packages:
  - coin
  - ascii
  - dplyr
-
