@@ -7,7 +7,7 @@ sudo: required
 before_install:
   - sudo add-apt-repository ppa:marutter/c2d4u -y
   - sudo apt-get update -q
-  - sudo apt-get install backports -y
+  - sudo apt-get install r-cran-backports -y
 
 r_binary_packages:
  - testthat
