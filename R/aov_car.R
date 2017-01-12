@@ -216,8 +216,7 @@ aov_car <- function(formula, data, fun.aggregate = NULL, type = afex_options("ty
   rh3 <- str_c(within.escaped, collapse = "*")
   # converting all within subject factors to factors and adding a leading charcter (x) if starting with a digit.
   for (within.factor in within) {
-    if (is.factor(data[,within.factor])) levels(data[,within.factor]) <- make.names(levels(data[,within.factor]), unique = TRUE)
-    else data[,within.factor] <- factor(as.character(data[,within.factor]), levels = unique(as.character(data[,within.factor])), labels = make.names(unique(as.character(data[,within.factor])), unique=TRUE))
+    if (!is.factor(data[,within.factor])) data[,within.factor] <- factor(as.character(data[,within.factor]), levels = unique(as.character(data[,within.factor])), labels = unique(as.character(data[,within.factor])))
   }
   # Check if each id is in only one between subjects cell.
   between.factors <- between[vapply(data[, between, drop = FALSE], is.factor, TRUE)]
@@ -323,7 +322,7 @@ aov_car <- function(formula, data, fun.aggregate = NULL, type = afex_options("ty
     }
     # print(as.formula(str_c("cbind(",str_c(colnames(tmp.dat[-(seq_along(c(id, between)))]), collapse = ", "), ") ~ ", rh2)))
     # browser()
-    tmp.lm <- do.call("lm", list(formula = as.formula(str_c("cbind(",str_c(colnames(tmp.dat[-(seq_along(c(id, between)))]), collapse = ", "), ") ~ ", rh2)), data = tmp.dat))
+    tmp.lm <- do.call("lm", list(formula = as.formula(str_c("cbind(",str_c(escape_vars(colnames(tmp.dat[-(seq_along(c(id, between)))])), collapse = ", "), ") ~ ", rh2)), data = tmp.dat))
     # browser()
     if (any(is.na(coef(tmp.lm)))) stop("Some parameters are not estimable, most likely due to empty cells of the design (i.e., structural missings). Check your data.")
     if (return == "lm") return(tmp.lm)
